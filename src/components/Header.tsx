@@ -44,7 +44,7 @@ export default function Header() {
           playsInline
           className="object-cover w-full h-full opacity-50 blur-sm"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-house-surrounded-by-nature-41697-large.mp4" type="video/mp4" />
+          <source src="public\videos\homepage-back.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
       </div>
