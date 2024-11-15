@@ -51,7 +51,7 @@ export default function About() {
           
           <div className="relative h-[400px] md:h-auto">
             <img 
-              src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?auto=format&fit=crop&q=80&w=1000"
+              src="public\images\shira.png"
               alt="Architecture workspace"
               className="w-full h-full object-cover rounded-lg shadow-xl"
             />
