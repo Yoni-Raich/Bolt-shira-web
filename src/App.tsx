@@ -18,10 +18,12 @@ function App() {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 2,
       infinite: false,
     });
+
+    (window as any).lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);

@@ -53,7 +53,7 @@ export default function About() {
             <img 
               src="public\images\shira.png"
               alt="Architecture workspace"
-              className="w-full h-full object-cover rounded-lg shadow-xl"
+              className="w-full h-full object-cover object-top rounded-lg shadow-xl"
             />
           </div>
         </div>

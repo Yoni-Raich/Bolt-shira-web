@@ -51,7 +51,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-screen bg-gray-50 py-24 px-6 md:px-12">
+    <section id="projects" ref={sectionRef} className="min-h-screen bg-gray-50 py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
           <Building2 className="w-8 h-8 text-gray-800" />

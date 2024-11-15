@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight } from 'lucide-react';
+import { MoveDown } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const arrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -29,10 +30,30 @@ export default function Header() {
         scale: 0.8,
         opacity: 0
       });
+
+      gsap.to(arrowRef.current, {
+        y: 8,
+        duration: 1.5,
+        ease: "power2.inOut",
+        repeat: -1,
+        yoyo: true
+      });
     });
 
     return () => ctx.revert();
   }, []);
+
+  const handleExploreClick = () => {
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      (window as any).lenis.scrollTo(projectsSection, {
+        duration: 2,
+        easing: (t: number) => {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+      });
+    }
+  };
 
   return (
     <div ref={headerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -56,9 +77,14 @@ export default function Header() {
         <p className="text-xl md:text-2xl font-light tracking-wide mb-12 opacity-90">
           ARCHITECTURAL DESIGN & INNOVATION
         </p>
-        <button className="group flex items-center gap-2 mx-auto text-lg border border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300">
+        <button 
+          onClick={handleExploreClick}
+          className="group flex items-center gap-2 mx-auto text-lg border border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300"
+        >
           Explore Work
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <div ref={arrowRef}>
+            <MoveDown className="w-5 h-5" />
+          </div>
         </button>
       </div>
     </div>
