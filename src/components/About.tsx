@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Compass } from 'lucide-react';
+import aboutContent from '../content/about.json';
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -40,19 +41,17 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-24">
           <div>
             <p ref={el => textRefs.current[0] = el} className="text-lg text-gray-700 mb-8">
-              With over a decade of experience in architectural design, I bring a unique perspective to every project, 
-              blending contemporary aesthetics with sustainable practices.
+              {aboutContent.content.paragraphs[0].text}
             </p>
             <p ref={el => textRefs.current[1] = el} className="text-lg text-gray-700 mb-8">
-              My work is characterized by clean lines, innovative use of materials, and a deep respect for the 
-              natural environment. Each design is crafted to create meaningful spaces that enhance daily life.
+              {aboutContent.content.paragraphs[1].text}
             </p>
           </div>
           
           <div className="relative h-[400px] md:h-auto">
             <img 
-              src="public\images\shira.png"
-              alt="Architecture workspace"
+              src={aboutContent.content.image.src}
+              alt={aboutContent.content.image.alt}
               className="w-full h-full object-cover object-top rounded-lg shadow-xl"
             />
           </div>

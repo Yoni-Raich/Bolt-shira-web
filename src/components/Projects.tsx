@@ -2,27 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Building2 } from 'lucide-react';
-
-const projects = [
-  {
-    title: "Azure Heights Residence",
-    location: "Los Angeles, CA",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000"
-  },
-  {
-    title: "The Glass House",
-    location: "Vancouver, BC",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000"
-  },
-  {
-    title: "Urban Oasis Complex",
-    location: "New York, NY",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&q=80&w=1000"
-  }
-];
+import projectsContent from '../content/projects.json';
 
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -59,7 +39,7 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-12">
-          {projects.map((project, index) => (
+          {projectsContent.projects.map((project, index) => (
             <div
               key={project.title}
               ref={el => projectRefs.current[index] = el}

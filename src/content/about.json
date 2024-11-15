@@ -1,0 +1,20 @@
+{
+  "title": "About",
+  "icon": "Compass",
+  "content": {
+    "paragraphs": [
+      {
+        "id": 1,
+        "text": "With over a decade of experience in architectural design, I bring a unique perspective to every project, blending contemporary aesthetics with sustainable practices."
+      },
+      {
+        "id": 2,
+        "text": "My work is characterized by clean lines, innovative use of materials, and a deep respect for the natural environment. Each design is crafted to create meaningful spaces that enhance daily life."
+      }
+    ],
+    "image": {
+      "src": "public/images/shira.png",
+      "alt": "Architecture workspace"
+    }
+  }
+} 
