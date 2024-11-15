@@ -65,7 +65,7 @@ export default function Header() {
           playsInline
           className="object-cover w-full h-full opacity-50 blur-sm"
         >
-          <source src="public/videos/homepage-back.mp4" type="video/mp4" />
+          <source src="videos/homepage-back.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
       </div>
