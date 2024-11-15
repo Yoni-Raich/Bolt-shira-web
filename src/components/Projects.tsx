@@ -35,7 +35,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
           <Building2 className="w-8 h-8 text-gray-800" />
-          <h2 className="text-4xl font-light">Selected Works</h2>
+          <h2 className="text-4xl font-light">{projectsContent.title}</h2>
         </div>
 
         <div className="grid gap-12">
