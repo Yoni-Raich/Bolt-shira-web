@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProjectDetail from './components/ProjectDetail';
 import Header from './components/Header';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -10,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    // Smooth scroll setup
     const lenis = new (window as any).Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -31,15 +32,28 @@ function App() {
     }
 
     requestAnimationFrame(raf);
+
+    // Connect GSAP ScrollTrigger and Lenis
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
   }, []);
 
   return (
-    <main className="bg-white">
-      <Header />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <main className="bg-white">
+            <Header />
+            <About />
+            <Projects />
+            <Contact />
+          </main>
+        } />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
