@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Building2 } from 'lucide-react';
 import projectsContent from '../content/projects.json';
+import { Link } from 'react-router-dom';
 
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,21 +44,22 @@ export default function Projects() {
             <div
               key={project.title}
               ref={el => projectRefs.current[index] = el}
-              className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer"
             >
-              <div className="aspect-[16/9] overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-2xl font-light mb-2">{project.title}</h3>
-                  <p className="text-sm opacity-80">{project.location} • {project.year}</p>
+              <Link to={`/project/${project.id}`} className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer block">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-0 left-0 p-8 text-white">
+                    <h3 className="text-2xl font-light mb-2">{project.title}</h3>
+                    <p className="text-sm opacity-80">{project.location} • {project.year}</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
