@@ -12,13 +12,31 @@ export default function Header() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power4.out"
-      });
+      // Split the text into spans
+      const title = titleRef.current;
+      if (title) {
+        const text = title.textContent || "";
+        title.textContent = "";
+        text.split("").forEach((char) => {
+          const span = document.createElement("span");
+          span.textContent = char;
+          span.style.display = "inline-block";
+          title.appendChild(span);
+        });
 
+        // Animate each character
+        gsap.from(title.children, {
+          y: 100,
+          rotationX: -90,
+          opacity: 0,
+          duration: 1.2,
+          stagger: 0.05,
+          ease: "back.out(1.7)",
+          transformOrigin: "0% 50% -50",
+        });
+      }
+
+      // Keep the rest of your animations
       gsap.to(headerRef.current, {
         scrollTrigger: {
           trigger: headerRef.current,
