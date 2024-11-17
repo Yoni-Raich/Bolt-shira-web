@@ -1,19 +1,19 @@
 {
-  "title": "About",
+  "title": "אודות",
   "content": {
     "paragraphs": [
       {
         "id": 1,
-        "text": "With over a decade of experience in architectural design, I bring a unique perspective to every project, blending contemporary aesthetics with sustainable practices."
+        "text": "עם ניסיון של למעלה מעשור בתכנון אדריכלי, אני מביאה פרספקטיבה ייחודית לכל פרויקט, המשלבת אסתטיקה עכשווית עם פרקטיקות בנות-קיימא."
       },
       {
         "id": 2,
-        "text": "My work is characterized by clean lines, innovative use of materials, and a deep respect for the natural environment. Each design is crafted to create meaningful spaces that enhance daily life."
+        "text": "העבודה שלי מתאפיינת בקווים נקיים, שימוש חדשני בחומרים, וכבוד עמוק לסביבה הטבעית. כל עיצוב מתוכנן ליצירת חללים משמעותיים המשפרים את חיי היומיום."
       }
     ],
     "image": {
       "src": "public/images/shira.png",
-      "alt": "Architecture workspace"
+      "alt": "סביבת עבודה אדריכלית"
     }
   }
 } 

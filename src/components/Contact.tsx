@@ -31,14 +31,14 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
           <Mail className="w-8 h-8" />
-          <h2 className="text-4xl font-light">Get in Touch</h2>
+          <h2 className="text-4xl font-light">צור קשר</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-24">
           <div>
             <p className="text-lg text-gray-300 mb-12">
-              Let's discuss your next project. Whether you're looking to build your dream home or 
-              develop a commercial space, I'm here to bring your vision to life.
+              בואו נדבר על הפרויקט הבא שלכם. בין אם אתם מעוניינים לבנות את בית החלומות שלכם או 
+              לפתח מתחם מסחרי, אני כאן כדי להפוך את החזון שלכם למציאות.
             </p>
 
             <div className="space-y-6">
