@@ -5,8 +5,8 @@
         "title": "עיצוב פנים לדירת קבלן",
         "location": "רמת גן",
         "year": "2020",
-        "thumbnail": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-        "heroImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+        "thumbnail": "/images/projects/project-1/main.jpg",
+        "heroImage": "/images/projects/project-1/main.jpg",
         "description": "דירת קבלן חדשה בת 4 חדרים בבנין בוטיק ברמת גן, הדירה עבור זוג צעיר בפרויקט החלוקה התאימה כבר לזוג אך הבית היה זקוק להלבשה ועיצוב פנים, \nמה שמיוחד בפרויקט הזה שכל הארונות/ נישות /ויטרינות ושידות היו בעיצוב אישי שלי ובנגרות מדוייקת בדיוק לפי דרישות בני הבי\nכך יצא שארון הזכוכית מחולק בדיוק לפי צרכי הדיירים, הויטרינה מחולקת בהתאה לכלי כסף והספרים, קונסולה מקסימה בכניסה לבית שממש שרטטתי לידם עד שיצא התוצאה המושלמת,\nשידות ומדפים מעוצבים בחדר השינה, ארון בחדר עבודה שמשרת את חלל העבודה ואת האחסון שצריך בכל בית... \nלא ויתרנו על תאורה ווילנות שעושים את כל הבית לחמים וכיף לגור בו",
         "challenge": "",
         "solution": "",
@@ -22,19 +22,24 @@
         },
         "gallery": [
           {
-            "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-            "caption": "Living Room",
-            "description": "Open concept living space with panoramic ocean views"
+            "url": "/images/projects/project-1/img1.jpg",
+            "caption": "",
+            "description": ""
           },
           {
-            "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
-            "caption": "Kitchen",
-            "description": "Modern kitchen with sustainable materials and smart appliances"
+            "url": "/images/projects/project-1/img2.jpg",
+            "caption": "",
+            "description": ""
           },
           {
-            "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
-            "caption": "Master Bedroom",
-            "description": "Spacious master suite with private terrace"
+            "url": "/images/projects/project-1/img3.jpg",
+            "caption": "",
+            "description": ""
+          },
+          {
+            "url": "/images/projects/project-1/img4.jpg",
+            "caption": "",
+            "description": ""
           }
         ]
       },
@@ -43,8 +48,8 @@
         "title": "יחידת הורים  ",
         "location": "ירושלים",
         "year": "2024",
-        "thumbnail": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
-        "heroImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+        "thumbnail": "/images/projects/project-2/main.jpg",
+        "heroImage": "/images/projects/project-2/main.jpg",
         "description": "הרחבת חדר שינה ותוספת שירותים ומקלחון לחדר-\nזוג עם 3 ילדים, הרחבנו את חדר השינה הוספנו חלל מפנק לקריאה, איפור ותליה וחדר שירותים עם מקלחת מפנקים לחדר השינה.\n",
         "challenge": "במהלך העבודות התגלתה ברצפה יציקת בטון שלא ניתן היה לשבור",
         "solution": "הגבהנו את כל החלל ויצרנו חדר שינה הכי מפנק שיש",
@@ -60,17 +65,17 @@
         },
         "gallery": [
           {
-            "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-            "caption": "Living Room",
-            "description": "Open concept living space with panoramic ocean views"
+            "url": "/images/projects/project-1/img3.jpg",
+            "caption": "Master Bedroom",
+            "description": "Spacious master suite with private terrace"
           },
           {
-            "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
+            "url": "/images/projects/project-2/img3.jpg",
             "caption": "Kitchen",
             "description": "Modern kitchen with sustainable materials and smart appliances"
           },
           {
-            "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
+            "url": "/images/projects/project-2/img3.jpg",
             "caption": "Master Bedroom",
             "description": "Spacious master suite with private terrace"
           }

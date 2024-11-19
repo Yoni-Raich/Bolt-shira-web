@@ -48,7 +48,7 @@ export default function Projects() {
               <Link to={`/project/${project.id}`} className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer block">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
