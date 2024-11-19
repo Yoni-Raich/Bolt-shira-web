@@ -19,12 +19,12 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" dir="rtl">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Navigation */}
         <Link to="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8">
           <ArrowLeft className="w-5 h-5" />
-          Back to Projects
+          חזרה לפרויקטים
         </Link>
 
         {/* Hero Section */}
@@ -34,7 +34,7 @@ export default function ProjectDetail() {
             alt={project.title}
             className="w-full h-full object-cover rounded-lg"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8">
+          <div className="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-8">
             <h1 className="text-5xl font-light text-white mb-4">{project.title}</h1>
             <p className="text-white/80">{project.location} • {project.year}</p>
           </div>
@@ -43,16 +43,16 @@ export default function ProjectDetail() {
         {/* Project Info */}
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-light mb-6">Overview</h2>
+            <h2 className="text-2xl font-light mb-6">סקירה כללית</h2>
             <p className="text-gray-700 leading-relaxed mb-8">{project.description}</p>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-light mb-4">The Challenge</h3>
+                <h3 className="text-xl font-light mb-4">האתגר</h3>
                 <p className="text-gray-700">{project.challenge}</p>
               </div>
               <div>
-                <h3 className="text-xl font-light mb-4">Our Solution</h3>
+                <h3 className="text-xl font-light mb-4">הפתרון שלנו</h3>
                 <p className="text-gray-700">{project.solution}</p>
               </div>
             </div>
@@ -60,21 +60,34 @@ export default function ProjectDetail() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-light mb-4">Project Details</h3>
+              <h3 className="text-xl font-light mb-4">פרטי הפרויקט</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Maximize className="w-5 h-5 text-gray-400" />
                   <div>
-                    <p className="font-medium">Size</p>
+                    <p className="font-medium">גודל</p>
                     <p className="text-gray-600">{project.details.size}</p>
                   </div>
                 </div>
-                {/* Add more details... */}
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">משך הפרויקט</p>
+                    <p className="text-gray-600">{project.details.duration}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Users className="w-5 h-5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">לקוח</p>
+                    <p className="text-gray-600">{project.details.client}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-light mb-4">Services</h3>
+              <h3 className="text-xl font-light mb-4">שירותים</h3>
               <div className="space-y-2">
                 {project.details.services.map((service, index) => (
                   <div key={index} className="flex items-center gap-2 text-gray-600">
@@ -89,7 +102,7 @@ export default function ProjectDetail() {
 
         {/* Gallery */}
         <div>
-          <h2 className="text-2xl font-light mb-8">Project Gallery</h2>
+          <h2 className="text-2xl font-light mb-8">גלריית הפרויקט</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {project.gallery.map((image, index) => (
               <div key={index} className="group relative">
@@ -99,7 +112,7 @@ export default function ProjectDetail() {
                   className="w-full aspect-[4/3] object-cover rounded-lg"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
-                  <div className="absolute bottom-4 left-4 text-white">
+                  <div className="absolute bottom-4 right-4 text-white">
                     <h4 className="text-lg font-light mb-2">{image.caption}</h4>
                     <p className="text-sm text-white/80">{image.description}</p>
                   </div>
