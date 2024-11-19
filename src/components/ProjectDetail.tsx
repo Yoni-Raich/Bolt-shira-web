@@ -28,11 +28,11 @@ export default function ProjectDetail() {
         </Link>
 
         {/* Hero Section */}
-        <div className="relative h-[70vh] mb-16">
+        <div className="relative h-[70vh] mb-16 overflow-hidden rounded-lg">
           <img 
             src={project.heroImage} 
             alt={project.title}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
           <div className="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-8">
             <h1 className="text-5xl font-light text-white mb-4">{project.title}</h1>
@@ -105,13 +105,13 @@ export default function ProjectDetail() {
           <h2 className="text-2xl font-light mb-8">גלריית הפרויקט</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {project.gallery.map((image, index) => (
-              <div key={index} className="group relative">
+              <div key={index} className="group relative overflow-hidden rounded-lg">
                 <img 
                   src={image.url} 
                   alt={image.caption}
-                  className="w-full aspect-[4/3] object-cover rounded-lg"
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="absolute bottom-4 right-4 text-white">
                     <h4 className="text-lg font-light mb-2">{image.caption}</h4>
                     <p className="text-sm text-white/80">{image.description}</p>
