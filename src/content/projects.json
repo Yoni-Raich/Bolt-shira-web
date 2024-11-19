@@ -1,87 +1,47 @@
 {
-  "title": "עבודות נבחרות",
-  "projects": [
-    {
-      "id": "azure-heights",
-      "title": "מגורי אזור הייטס",
-      "location": "לוס אנג'לס, קליפורניה",
-      "year": "2023",
-      "thumbnail": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-      "heroImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-      "description": "פרויקט מגורים מודרני המשלב באופן חלק בין החיים בפנים ובחוץ. העיצוב מדגיש חומרים ברי-קיימא ואור טבעי, ויוצר חללים שמרגישים יוקרתיים וידידותיים לסביבה.",
-      "challenge": "האתגר המרכזי היה ליצור בית יוקרה בר-קיימא תוך מקסום הנוף לאוקיינוס ושמירה על פרטיות.",
-      "solution": "יישמנו חלונות מרצפה עד תקרה עם טכנולוגיית זכוכית חכמה ותכננו סדרה של מרפסות מדורגות היוצרות מחסומי פרטיות טבעיים.",
-      "details": {
-        "size": "604 מ״ר",
-        "duration": "18 חודשים",
-        "completion": "דצמבר 2023",
-        "client": "מגורים פרטיים",
-        "services": [
-          "תכנון אדריכלי",
-          "תכנון פנים",
-          "שילוב נוף",
-          "ייעוץ קיימות"
+    "title": "עבודות נבחרות",
+    "projects": [
+      {
+        "id": "azure-heights",
+        "title": "מגורי אזור הייטס",
+        "location": "לוס אנג'לס, קליפורניה",
+        "year": "2023",
+        "thumbnail": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+        "heroImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+        "description": "פרויקט מגורים מודרני המשלב באופן חלק בין החיים בפנים ובחוץ. העיצוב מדגיש חומרים ברי-קיימא ואור טבעי, ויוצר חללים שמרגישים יוקרתיים וידידותיים לסביבה.",
+        "challenge": "האתגר המרכזי היה ליצור בית יוקרה בר-קיימא תוך מקסום הנוף לאוקיינוס ושמירה על פרטיות.",
+        "solution": "יישמנו חלונות מרצפה עד תקרה עם טכנולוגיית זכוכית חכמה ותכננו סדרה של מרפסות מדורגות היוצרות מחסומי פרטיות טבעיים.",
+        "details": {
+          "size": "604 מ״ר",
+          "duration": "18 חודשים",
+          "completion": "דצמבר 2023",
+          "client": "מגורים פרטיים",
+          "services": [
+            "תכנון אדריכלי",
+            "תכנון פנים",
+            "שילוב נוף",
+            "ייעוץ קיימות"
+          ]
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+            "caption": "סלון",
+            "description": "חלל מגורים בתכנון פתוח עם נוף פנורמי לאוקיינוס"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
+            "caption": "מטבח",
+            "description": "מטבח מודרני עם חומרים ברי-קיימא ומכניקה מודרנית"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
+            "caption": "אולם מארח",
+            "description": "אולם מארח מודרני עם מרפסת פרטית ומרפסת מדורגת"
+          }
         ]
       },
-      "gallery": [
-        {
-          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-          "caption": "סלון",
-          "description": "חלל מגורים בתכנון פתוח עם נוף פנורמי לאוקיינוס"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
-          "caption": "מטבח",
-          "description": "מטבח מודרני עם חומרים ברי-קיימא ומכניקה מודרנית"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
-          "caption": "אולם מארח",
-          "description": "אולם מארח מודרני עם מרפסת פרטית ומרפסת מדורגת"
-        }
-      ]
-    },
-    {
-      "id": "urban-oasis",
-      "title": "Urban Oasis Complex",
-      "location": "New York, NY",
-      "year": "2023",
-      "thumbnail": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
-      "heroImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
-      "description": "A revolutionary mixed-use development that brings nature into the heart of the city.",
-      "challenge": "The main challenge was to create a sustainable luxury home while maximizing the stunning ocean views and maintaining privacy.",
-      "solution": "We implemented floor-to-ceiling windows with smart glass technology and designed a series of cascading terraces that create natural privacy barriers.",
-      "details": {
-        "size": "6,500 sq ft",
-        "duration": "18 months",
-        "completion": "December 2023",
-        "client": "Private Residence",
-        "services": [
-          "Architectural Design",
-          "Interior Planning",
-          "Landscape Integration",
-          "Sustainability Consulting"
-        ]
-      },
-      "gallery": [
-        {
-          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-          "caption": "Living Room",
-          "description": "Open concept living space with panoramic ocean views"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
-          "caption": "Kitchen",
-          "description": "Modern kitchen with sustainable materials and smart appliances"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
-          "caption": "Master Bedroom",
-          "description": "Spacious master suite with private terrace"
-        }
-      ]
-    },
-    {
+      {
         "id": "urban-oasis",
         "title": "Urban Oasis Complex",
         "location": "New York, NY",
@@ -120,6 +80,46 @@
             "description": "Spacious master suite with private terrace"
           }
         ]
-      }
-  ]
-} 
+      },
+      {
+          "id": "urban-oasis",
+          "title": "Urban Oasis Complex",
+          "location": "New York, NY",
+          "year": "2023",
+          "thumbnail": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
+          "heroImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+          "description": "A revolutionary mixed-use development that brings nature into the heart of the city.",
+          "challenge": "The main challenge was to create a sustainable luxury home while maximizing the stunning ocean views and maintaining privacy.",
+          "solution": "We implemented floor-to-ceiling windows with smart glass technology and designed a series of cascading terraces that create natural privacy barriers.",
+          "details": {
+            "size": "6,500 sq ft",
+            "duration": "18 months",
+            "completion": "December 2023",
+            "client": "Private Residence",
+            "services": [
+              "Architectural Design",
+              "Interior Planning",
+              "Landscape Integration",
+              "Sustainability Consulting"
+            ]
+          },
+          "gallery": [
+            {
+              "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+              "caption": "Living Room",
+              "description": "Open concept living space with panoramic ocean views"
+            },
+            {
+              "url": "https://images.unsplash.com/photo-1600607687644-c7171b42498b",
+              "caption": "Kitchen",
+              "description": "Modern kitchen with sustainable materials and smart appliances"
+            },
+            {
+              "url": "https://images.unsplash.com/photo-1600607687166-bff1c4c9f2a9",
+              "caption": "Master Bedroom",
+              "description": "Spacious master suite with private terrace"
+            }
+          ]
+        }
+    ]
+  } 
