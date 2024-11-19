@@ -44,15 +44,15 @@ export default function Contact() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-gray-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>058-7160002</span>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-gray-400" />
-                <span>contact@shiraraich.com</span>
+                <span>shiraraich@gmail.com</span>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="w-5 h-5 text-gray-400" />
-                <span>Los Angeles, CA</span>
+                <span>פתח תקווה, ישראל</span>
               </div>
             </div>
           </div>

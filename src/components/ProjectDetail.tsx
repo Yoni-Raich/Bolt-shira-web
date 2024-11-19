@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Maximize, Users, CheckSquare } from 'lucide-react';
 import { Project } from '../types/project';
 import projectsContent from '../content/projects.json';
+import Masonry from 'react-masonry-css';
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -17,6 +18,12 @@ export default function ProjectDetail() {
       </div>
     );
   }
+
+  const breakpointColumns = {
+    default: 3,
+    1024: 2,
+    640: 1
+  };
 
   return (
     <div className="min-h-screen bg-white" dir="rtl">
@@ -103,13 +110,17 @@ export default function ProjectDetail() {
         {/* Gallery */}
         <div>
           <h2 className="text-2xl font-light mb-8">גלריית הפרויקט</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Masonry
+            breakpointCols={breakpointColumns}
+            className="flex -ml-6 w-auto"
+            columnClassName="pl-6 bg-clip-padding"
+          >
             {project.gallery.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg">
+              <div key={index} className="mb-6 group relative overflow-hidden rounded-lg">
                 <img 
                   src={image.url} 
                   alt={image.caption}
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="absolute bottom-4 right-4 text-white">
@@ -119,7 +130,7 @@ export default function ProjectDetail() {
                 </div>
               </div>
             ))}
-          </div>
+          </Masonry>
         </div>
       </div>
     </div>
