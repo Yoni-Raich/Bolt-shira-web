@@ -90,7 +90,7 @@ export default function Header() {
         <div className="mb-8">
           <img 
             ref={logoRef}
-            src="/images/logo.svg" 
+            src="/images/logo3.svg" 
             alt="The Oraison Architecture"
             className="h-80 md:h-[300px] w-auto mx-auto"
           />
