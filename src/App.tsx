@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Loading from './components/Loading';
@@ -11,7 +11,42 @@ import Contact from './components/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+function ScrollToTop() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    const resetScroll = () => {
+      if ((window as any).lenis) {
+        (window as any).lenis.stop();
+        
+        // Force immediate scroll reset
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Reset Lenis scroll position
+        (window as any).lenis.scrollTo(0, { immediate: true, force: true });
+        
+        // Restart Lenis after a brief delay
+        setTimeout(() => {
+          (window as any).lenis.start();
+        }, 100);
+      }
+    };
+
+    // Execute scroll reset immediately
+    resetScroll();
+    
+    // Also try again after a short delay to ensure it works
+    const timer = setTimeout(resetScroll, 50);
+    
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return null;
+}
+
+function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -80,7 +115,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <>
+      <ScrollToTop />
       {isLoading ? (
         <Loading />
       ) : (
@@ -98,8 +134,14 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       )}
-    </BrowserRouter>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}

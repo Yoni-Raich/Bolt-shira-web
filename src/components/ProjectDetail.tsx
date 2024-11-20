@@ -1,12 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Maximize, Users, CheckSquare } from 'lucide-react';
+import { useEffect } from 'react';
 import { Project } from '../types/project';
 import projectsContent from '../content/projects.json';
 import Masonry from 'react-masonry-css';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projectsContent.projects.find(p => p.id === id) as Project;
+
+  useEffect(() => {
+    // Only cleanup ScrollTrigger instances
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   if (!project) {
     return (

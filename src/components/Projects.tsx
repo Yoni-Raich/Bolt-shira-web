@@ -45,7 +45,10 @@ export default function Projects() {
               key={project.title}
               ref={el => projectRefs.current[index] = el}
             >
-              <Link to={`/project/${project.id}`} className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer block">
+              <Link 
+                to={`/project/${project.id}`} 
+                className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer block"
+              >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={project.thumbnail}
