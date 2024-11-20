@@ -7,18 +7,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const logoRef = useRef<HTMLImageElement>(null);
+  const architectureRef = useRef<HTMLHeadingElement>(null);
+  const namesRef = useRef<HTMLHeadingElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        y: 100,
+      // Timeline for entrance animations
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      
+      tl.from(logoRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 2,
+      })
+      .from(architectureRef.current, {
+        y: 50,
         opacity: 0,
         duration: 1.5,
-        ease: "power4.out"
-      });
+      }, "-=1") // Start slightly before logo animation ends
+      .from(namesRef.current, {
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+      }, "-=1.2");
 
+      // Scroll animation
       gsap.to(headerRef.current, {
         scrollTrigger: {
           trigger: headerRef.current,
@@ -31,6 +46,7 @@ export default function Header() {
         opacity: 0
       });
 
+      // Continuous arrow animation
       gsap.to(arrowRef.current, {
         y: 8,
         duration: 1.5,
@@ -71,12 +87,28 @@ export default function Header() {
       </div>
       
       <div className="relative z-10 text-center text-white">
-        <h1 ref={titleRef} className="text-7xl md:text-9xl font-light tracking-wider mb-8">
-          SHIRA & SHIRA
-        </h1>
-        <p className="text-xl md:text-2xl font-light tracking-wide mb-12 opacity-90">
-          ARCHITECTURAL DESIGN & INNOVATION
-        </p>
+        <div className="mb-8">
+          <img 
+            ref={logoRef}
+            src="/images/logo.svg" 
+            alt="The Oraison Architecture"
+            className="h-80 md:h-[300px] w-auto mx-auto"
+          />
+        </div>
+        <div className="space-y-2 mb-12">
+          <h2 
+            ref={architectureRef}
+            className="text-3xl md:text-5xl font-light tracking-[0.2em]"
+          >
+            ARCHITECTURE
+          </h2>
+          <h3 
+            ref={namesRef}
+            className="text-xl md:text-3xl font-light tracking-wider"
+          >
+            Shira Raich | Shira Harari
+          </h3>
+        </div>
         <button 
           onClick={handleExploreClick}
           className="group flex items-center gap-2 mx-auto text-lg border border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300"
