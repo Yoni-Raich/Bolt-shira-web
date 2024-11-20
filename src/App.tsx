@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Loading from './components/Loading';
 import ProjectDetail from './components/ProjectDetail';
 import Header from './components/Header';
 import About from './components/About';
@@ -11,7 +12,10 @@ import Contact from './components/Contact';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    // Initialize Lenis
     const lenis = new (window as any).Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -38,23 +42,32 @@ function App() {
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
+
+    // Hide loading after animation
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
   }, []);
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={
-          <main className="bg-white">
-            <Header />
-            <div dir="rtl">
-              <About />
-              <Projects />
-              <Contact />
-            </div>
-          </main>
-        } />
-        <Route path="/project/:id" element={<ProjectDetail />} />
-      </Routes>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Routes>
+          <Route path="/" element={
+            <main className="bg-white">
+              <Header />
+              <div dir="rtl">
+                <About />
+                <Projects />
+                <Contact />
+              </div>
+            </main>
+          } />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+      )}
     </BrowserRouter>
   );
 }
