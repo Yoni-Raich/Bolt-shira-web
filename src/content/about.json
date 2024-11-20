@@ -1,19 +1,35 @@
 {
-  "title": "About",
+  "title": "אודות",
   "content": {
     "paragraphs": [
       {
         "id": 1,
-        "text": "Architecture is not just a profession for me - it's a passion that has accompanied me since forever. From a young age, I knew clearly that this was the path I aspired to, and today I am proud to realize this dream anew every day.\n\nMy philosophy in designing spaces rests on two central principles: comfort and beauty. The most exciting challenge for me is to transform a space into someone else's dream - to take an empty space and turn it into something that reflects the unique personality and needs of the client.\n\nIn every project, I emphasize practicality and clean design. Although budgets are sometimes limited, I invest full effort to find the most creative and quality solutions at comfortable prices. The goal is always to achieve beautiful design that makes the client smile and feel at home.\n\nMy architectural style is flexible and personalized, understanding that each project is a unique story. My main source of inspiration is nature - the sea, landscapes, and natural colors fuel my creativity and fill me with positive energy.\n\nOne of my most significant projects was designing an impressive store in one of the country's leading malls, a project that proved my ability to create spaces that attract dozens of customers daily."
+        "text": "אדריכלות היא לא רק מקצוע עבורי - זו תשוקה שליוותה אותי מאז ומתמיד. כבר בגיל צעיר ידעתי בבירור שזה המסלול שאליו אני שואפת, והיום אני גאה לממש את החלום הזה מדי יום מחדש."
       },
       {
         "id": 2,
-        "text": "My work is characterized by clean lines, innovative use of materials, and a deep respect for the natural environment. Each design is crafted to create meaningful spaces that enhance daily life."
+        "text": "הפילוסופיה שלי בעיצוב מרחבים נשענת על שני עקרונות מרכזיים: נוחות ויופי. האתגר המרגש ביותר עבורי הוא להפוך חלל לחלום של אדם אחר - לקחת מרחב ריק ולהפוך אותו למשהו שישקף את האישיות והצרכים הייחודיים של הלקוח."
+      },
+      {
+        "id": 3,
+        "text": "בכל פרויקט אני שמה דגש על פרקטיות ועיצוב נקי. למרות שהתקציבים לעיתים מוגבלים, אני משקיעה את מלוא המאמץ למצוא את הפתרונות היצירתיים והאיכותיים ביותר במחירים נוחים. המטרה היא תמיד להשיג עיצוב יפהפה שגורם ללקוח לחייך ולהרגיש בבית."
+      },
+      {
+        "id": 4,
+        "text": "הסגנון האדריכלי שלי גמיש ומותאם אישית, תוך הבנה שכל פרויקט הוא סיפור ייחודי. מקור ההשראה העיקרי שלי הוא הטבע - הים, הנופים והצבעים הטבעיים מזינים את היצירתיות שלי וממלאים אותי באנרגיה חיובית."
+      },
+      {
+        "id": 5,
+        "text": "אחד הפרויקטים המשמעותיים שלי היה עיצוב חנות מרשימה באחד הקניונים המובילים בארץ, פרויקט שהוכיח את היכולת שלי ליצור חללים שמושכים עשרות לקוחות מדי יום."
+      },
+      {
+        "id": 6,
+        "text": "העבודה שלי מתאפיינת בקווים נקיים, שימוש חדשני בחומרים, וכבוד עמוק לסביבה הטבעית. כל עיצוב מתוכנן ליצירת חללים משמעותיים המשפרים את חיי היומיום."
       }
     ],
     "image": {
-      "src": "public/images/shira.png",
-      "alt": "Architecture workspace"
+      "src": "public/images/skatch.png",
+      "alt": "סביבת עבודה אדריכלית"
     }
   }
 } 

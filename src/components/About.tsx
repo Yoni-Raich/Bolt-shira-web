@@ -40,12 +40,15 @@ export default function About() {
         
         <div className="grid md:grid-cols-2 gap-12 md:gap-24">
           <div>
-            <p ref={el => textRefs.current[0] = el} className="text-lg text-gray-700 mb-8">
-              {aboutContent.content.paragraphs[0].text}
-            </p>
-            <p ref={el => textRefs.current[1] = el} className="text-lg text-gray-700 mb-8">
-              {aboutContent.content.paragraphs[1].text}
-            </p>
+            {aboutContent.content.paragraphs.map((paragraph, index) => (
+              <p 
+                key={paragraph.id}
+                ref={el => textRefs.current[index] = el} 
+                className="text-lg text-gray-700 mb-8"
+              >
+                {paragraph.text}
+              </p>
+            ))}
           </div>
           
           <div className="relative h-[400px] md:h-auto">

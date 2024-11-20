@@ -46,9 +46,11 @@ function App() {
         <Route path="/" element={
           <main className="bg-white">
             <Header />
-            <About />
-            <Projects />
-            <Contact />
+            <div dir="rtl">
+              <About />
+              <Projects />
+              <Contact />
+            </div>
           </main>
         } />
         <Route path="/project/:id" element={<ProjectDetail />} />
