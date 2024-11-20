@@ -59,7 +59,8 @@ function AppContent() {
       smoothWheel: true,
       wheelMultiplier: 1,
       smoothTouch: true,
-      touchMultiplier: 2,
+      touchMultiplier: 1.5,
+      touchInertiaMultiplier: 1.5,
       infinite: false,
     });
 
