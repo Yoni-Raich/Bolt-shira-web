@@ -28,7 +28,7 @@
       }
     ],
     "image": {
-      "src": "public/images/skatch.png",
+      "src": "/images/skatch.png",
       "alt": "סביבת עבודה אדריכלית"
     }
   }
