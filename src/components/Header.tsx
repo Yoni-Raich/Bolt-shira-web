@@ -92,7 +92,7 @@ export default function Header() {
             ref={logoRef}
             src="/images/logo.svg" 
             alt="The Oraison Architecture"
-            className="h-80 md:h-[350px] w-auto mx-auto"
+            className="h-80 md:h-[300px] w-auto mx-auto"
           />
         </div>
         <div className="space-y-2 mb-12">
