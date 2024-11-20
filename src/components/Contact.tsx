@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  const inputRefs = useRef<(HTMLInputElement | HTMLTextAreaElement | null)[]>([]);
+  const inputRefs = useRef<(HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement | null)[]>([]);
+  const [status, setStatus] = useState<string>('');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,6 +27,36 @@ export default function Contact() {
 
     return () => ctx.revert();
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!formRef.current) return;
+
+    try {
+      setStatus('שולח...');
+      
+      console.log('EmailJS Config:', {
+        serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.slice(0, 5) + '...'
+      });
+      
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus('ההודעה נשלחה בהצלחה!');
+      formRef.current.reset();
+      setTimeout(() => setStatus(''), 3000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus('שגיאה בשליחת ההודעה. אנא נסו שוב.');
+    }
+  };
 
   return (
     <section className="min-h-screen bg-gray-900 text-white py-24 px-6 md:px-12">
@@ -57,31 +89,45 @@ export default function Contact() {
             </div>
           </div>
 
-          <form ref={formRef} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <input
               ref={el => inputRefs.current[0] = el}
               type="text"
-              placeholder="Name"
+              name="user_name"
+              placeholder="שם מלא"
+              required
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-white transition-colors"
             />
             <input
               ref={el => inputRefs.current[1] = el}
               type="email"
-              placeholder="Email"
+              name="user_email"
+              placeholder="אימייל"
+              required
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-white transition-colors"
             />
             <textarea
               ref={el => inputRefs.current[2] = el}
-              placeholder="Message"
+              name="message"
+              placeholder="הודעה"
+              required
               rows={6}
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-white transition-colors"
             ></textarea>
             <button
               ref={el => inputRefs.current[3] = el}
+              type="submit"
               className="w-full bg-white text-gray-900 rounded-lg px-6 py-3 font-medium hover:bg-gray-100 transition-colors"
             >
-              Send Message
+              שלח הודעה
             </button>
+            {status && (
+              <div className="text-center mt-4">
+                <p className={status.includes('שגיאה') ? 'text-red-500' : 'text-green-500'}>
+                  {status}
+                </p>
+              </div>
+            )}
           </form>
         </div>
       </div>
