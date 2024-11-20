@@ -31,6 +31,7 @@
   --ray-color: #94a3b8;
   --spark-color: #475569;
   --back-color: #ffffff;
+  --cursor-size: 28px;
 }
 
 #lastray {
@@ -232,5 +233,41 @@
 
   .gallery-item:hover .gallery-item-content {
     opacity: 1;
+  }
+}
+
+#cursor {
+  position: fixed;
+  top: calc(var(--cursor-size) * -0.5);
+  left: calc(var(--cursor-size) * -0.5);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  filter: url(#goo);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: var(--cursor-size);
+  background: white;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.goo {
+  position: fixed;
+  visibility: hidden;
+  z-index: -1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor-circle {
+    background: rgba(255, 255, 255, 0.8);
   }
 }
