@@ -26,11 +26,11 @@
 }
 
 :root {
-  --main-color: #ABA1FF;
-  --main-color-dark: #675FB2;
-  --ray-color: #FFD6BB;
-  --spark-color: #70B268;
-  --back-color: #2f2e4e;
+  --main-color: #f8f8f8;
+  --main-color-dark: #e2e8f0;
+  --ray-color: #94a3b8;
+  --spark-color: #475569;
+  --back-color: #ffffff;
 }
 
 #lastray {
@@ -89,7 +89,7 @@
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-  box-shadow: 0px 0px 15px 0px rgba(200, 230, 255, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(148, 163, 184, 0.2);
 }
 
 .ray {
@@ -105,7 +105,7 @@
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-  box-shadow: 0px 0px 15px 0px rgba(255, 230, 200, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(148, 163, 184, 0.15);
 }
 
 .spark {
