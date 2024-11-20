@@ -1,14 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Maximize, Users, CheckSquare } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Project } from '../types/project';
 import projectsContent from '../content/projects.json';
 import Masonry from 'react-masonry-css';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import ImageViewer from './ImageViewer';
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projectsContent.projects.find(p => p.id === id) as Project;
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     // Only cleanup ScrollTrigger instances
@@ -138,20 +140,16 @@ export default function ProjectDetail() {
         {project.gallery.length > 0 && (
           <div>
             <h2 className="text-2xl font-light mb-8">גלריית הפרויקט</h2>
-            <Masonry
-              breakpointCols={breakpointColumns}
-              className="flex -ml-6 w-auto"
-              columnClassName="pl-6 bg-clip-padding"
-            >
+            <div className="gallery-wrap">
               {project.gallery.map((image, index) => (
-                <div key={index} className="mb-6 group relative overflow-hidden rounded-lg">
-                  <img 
-                    src={image.url} 
-                    alt={image.caption || project.title}
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
-                  />
+                <div
+                  key={index}
+                  className="gallery-item cursor-pointer"
+                  style={{ backgroundImage: `url(${image.url})` }}
+                  onClick={() => setSelectedImage(image.url)}
+                >
                   {(image.caption || image.description) && (
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="gallery-item-content opacity-0 group-hover:opacity-100">
                       <div className="absolute bottom-4 right-4 text-white">
                         {image.caption && (
                           <h4 className="text-lg font-light mb-2">{image.caption}</h4>
@@ -164,7 +162,15 @@ export default function ProjectDetail() {
                   )}
                 </div>
               ))}
-            </Masonry>
+            </div>
+
+            {/* Image Viewer */}
+            {selectedImage && (
+              <ImageViewer 
+                imageUrl={selectedImage} 
+                onClose={() => setSelectedImage(null)} 
+              />
+            )}
           </div>
         )}
       </div>
