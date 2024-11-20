@@ -48,8 +48,8 @@
         "title": "יחידת הורים  ",
         "location": "ירושלים",
         "year": "2024",
-        "thumbnail": "/images/projects/project-2/main.jpg",
-        "heroImage": "/images/projects/project-2/main.jpg",
+        "thumbnail": "/images/projects/project-2/main.png",
+        "heroImage": "/images/projects/project-2/img (4).png",
         "description": "הרחבת חדר שינה ותוספת שירותים ומקלחון לחדר-\nזוג עם 3 ילדים, הרחבנו את חדר השינה הוספנו חלל מפנק לקריאה, איפור ותליה וחדר שירותים עם מקלחת מפנקים לחדר השינה.\n",
         "challenge": "במהלך העבודות התגלתה ברצפה יציקת בטון שלא ניתן היה לשבור",
         "solution": "הגבהנו את כל החלל ויצרנו חדר שינה הכי מפנק שיש",
@@ -65,12 +65,12 @@
         },
         "gallery": [
           {
-            "url": "/images/projects/project-1/img3.jpg",
+            "url": "/images/projects/project-2/img (5).png",
             "caption": "Master Bedroom",
             "description": "Spacious master suite with private terrace"
           },
           {
-            "url": "/images/projects/project-2/img3.jpg",
+            "url": "/images/projects/project-2/img (6).png",
             "caption": "Kitchen",
             "description": "Modern kitchen with sustainable materials and smart appliances"
           },
