@@ -72,7 +72,7 @@ export default function Header() {
       
       <div className="relative z-10 text-center text-white">
         <h1 ref={titleRef} className="text-7xl md:text-9xl font-light tracking-wider mb-8">
-          SHIRA RAICH
+          SHIRA & SHIRA
         </h1>
         <p className="text-xl md:text-2xl font-light tracking-wide mb-12 opacity-90">
           ARCHITECTURAL DESIGN & INNOVATION
