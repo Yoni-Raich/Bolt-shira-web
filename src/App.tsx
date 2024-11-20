@@ -43,10 +43,40 @@ function App() {
       lenis.raf(time * 1000);
     });
 
-    // Hide loading after animation
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 7000);
+    // Track when all resources are loaded
+    const handleLoad = () => {
+      const images = Array.from(document.images);
+      const videos = Array.from(document.getElementsByTagName('video'));
+      
+      Promise.all([
+        // Wait for all images to load
+        ...images.map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve; // Handle error cases as well
+          });
+        }),
+        // Wait for videos to load metadata
+        ...videos.map(video => {
+          if (video.readyState >= 2) return Promise.resolve();
+          return new Promise(resolve => {
+            video.onloadeddata = resolve;
+            video.onerror = resolve;
+          });
+        })
+      ]).then(() => {
+        setIsLoading(false);
+      });
+    };
+
+    // Start tracking after DOM is ready
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
   }, []);
 
   return (
